@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 
-from accounts.views import register
+from accounts.views import register, login, show_profile_details, edit_profile, delete_profile
 
 urlpatterns = [
     path('register/', register, name='register'),

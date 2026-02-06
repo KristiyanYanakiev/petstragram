@@ -9,7 +9,7 @@ from photos.models import Photo
 
 @admin.register(Photo)
 class PhotoAdmin(ModelAdmin):
-    list_display = ['id', 'description', 'date_of_publication', 'tagged_pets_list']
+    list_display = ['id', 'description', 'date_of_publication', 'tagged_pets_list', 'location']
 
     @staticmethod
     def tagged_pets_list(obj) -> str:

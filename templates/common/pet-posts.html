@@ -71,15 +71,18 @@
             <a href="{% url 'pet-details' 'username' pet.slug %}">
                 <p class="message">
                     <b>{{ pet.name }}</b>
+                    Click Here!
                 </p>
             </a>
         {% endfor %}
 
 
         <!-- Link to Photo Details Page -->
-        <a href="{% url 'photo-details' photo.pk %}">
-            <h4 class="details">See details</h4>
-        </a>
+        {% if photo %}
+            <a href="{% url 'photos:photo-details' photo.pk %}">
+                <h4 class="details">See details: {{ photo.pk }}</h4>
+            </a>
+        {% endif %}
 
         <!-- Date of Publication -->
         <h5 class="postTime">{{ photo.date_of_publication}}</h5>
